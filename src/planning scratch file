@@ -1,0 +1,48 @@
+Classes:
+- HTMLReader
+- FileGatherer
+- Analyzer
+
+
+Needed Inputs:
+Username
+
+
+
+HTMLReader:
+    Returns: Occurance of each role
+             Occurance of each player
+             Winrate of role
+             Winrate of alignment
+             Winrate of role (you)
+             Winrate of alignment (you)
+             Occurance of role (you)
+
+             Winrate format:
+             wins/total occurance (PERCENT%)
+
+    Steps to take (I think):
+    - Try removing everything that starts with < and ends with > w/ regex
+
+
+<Username (In Game), [username(Actual),Role, ALIVE = 1 DEAD = 0]>
+HTMLReader creates infoMap > Analyzer
+
+~~~~~
+Coroner,Investigator,Lookout,Psychic,Sheriff,Spy,Tracker,Bodyguard,Cleric,Crusader,Trapper,Veteran,Trickster,Deputy,Vigilante,Admirer,Amnesiac,Retributionist,Socialite,Tavern Keeper,Jailor,Marshal,Mayor,Monarch,Prosecutor,Coven Leader,Hex Master,Witch,Conjurer,Jinx,Ritualist,Dreamweaver,Enchanter,Illusionist,Medusa,Necromancer,Poisoner,Potion Master,Voodoo Master,Wildling,Arsonist,Serial Killer,Shroud,Werewolf,Baker,Berserker,Plaguebearer,Soul Collector,Famine,War,Pestilence,Death,Vampire,Cursed Soul
+
+
+
+6/23/24 TODO:
+ - Wincon for Jester/Exe/etc.
+ - Clean up output, let it output CSV/ Excel-friendly file
+ - Clean up code
+ - Create GUI (Not priority)
+ - Create and distribute executable :)
+
+
+CSV Layout:
+File Name: ToSSpreadsheet.csv
+Role, Wins, Games Played, %USERNAME% winrate, overall winrate, BUFFER, BUFFER, Player, Wins, Games Played, Winrate
+%ROLENAME%, %WINCOUNT%, %GAMECOUNT%, %USERWINRATE%, %WINRATE%, BUFFER, BUFFER, %PLAYERNAME%, %PLAYERWINCNT%, %GAMECNT%, %WINRT%
+
